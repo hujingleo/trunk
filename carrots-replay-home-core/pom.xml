@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>carrots-replay</artifactId>
+        <groupId>ptteng</groupId>
+        <version>2.0-SNAPSHOT</version>
+    </parent>
+    <groupId>ptteng</groupId>
+    <artifactId>carrots-replay-home-core</artifactId>
+    <version>2.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId> jackson-core-asl</artifactId>
+            <version>1.9.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId> jackson-mapper-asl</artifactId>
+            <version>1.9.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gemantic.commons</groupId>
+            <artifactId>commons-core</artifactId>
+            <version>1.88</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.tuscany.sca</groupId>
+            <artifactId>tuscany-sca-api</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>ejb3-persistence</artifactId>
+            <version>1.0.2.GA</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>3.3.2.GA</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-collections</artifactId>
+                    <groupId>commons-collections</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>3.3.2.GA</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-annotations</artifactId>
+            <version>3.4.0.GA</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>3.4.0.GA</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.5.8</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.5.8</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>ptteng</groupId>
+            <artifactId>commons-dao-util</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+
+        <dependency>
+
+            <groupId>ptteng</groupId>
+            <version>0.0.1</version>
+            <artifactId>common-mongo-util</artifactId>
+        </dependency>
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.0-beta-7</version>
+                <configuration>
+                    <tagBase>svn://wx.ptteng.com/ptteng/carrots-replay/tags/carrots-home-core</tagBase>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <scm>
+        <connection>scm:svn:svn://wx.ptteng.com/ptteng/carrots-replay/tags/carrots-home-core/carrots-home-core-1.1</connection>
+        <developerConnection>scm:svn:svn://wx.ptteng.com/ptteng/carrots-replay/tags/carrots-home-core/carrots-home-core-1.1</developerConnection>
+    </scm>
+</project>
