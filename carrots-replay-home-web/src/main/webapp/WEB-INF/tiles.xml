@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" 
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd"> 
+<tiles-definitions>	
+		
+						<definition name="/carrots-replay-home-service/company/view/*" extends="root">
+		    <put-attribute name="right" value="/WEB-INF/pages/{0}.jsp" />
+		      <put-attribute name="title" value="地址" type="string" />
+	        </definition>
+	
+						<definition name="/carrots-replay-home-service/companyTag/view/*" extends="root">
+		    <put-attribute name="right" value="/WEB-INF/pages/{0}.jsp" />
+		      <put-attribute name="title" value="地址" type="string" />
+	        </definition>
+	
+						<definition name="/carrots-replay-home-service/profession/view/*" extends="root">
+		    <put-attribute name="right" value="/WEB-INF/pages/{0}.jsp" />
+		      <put-attribute name="title" value="地址" type="string" />
+	        </definition>
+
+	<definition name="/carrots-replay-home-service/article/view/*" extends="root">
+		<put-attribute name="right" value="/WEB-INF/pages/{0}.jsp" />
+		<put-attribute name="title" value="地址" type="string" />
+	</definition>
+
+
+</tiles-definitions>
+					

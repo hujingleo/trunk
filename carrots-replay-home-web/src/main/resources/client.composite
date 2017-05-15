@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite xmlns="http://www.osoa.org/xmlns/sca/1.0" xmlns:tuscany="http://tuscany.apache.org/xmlns/sca/1.0"
+           xmlns:scallop="http://scallop/xmlns/sca/1.0"
+           targetNamespace="http://sns.sohu.com/home/composite" xmlns:sample="http://sns.sohu.com/home/composite"
+           name="HomeComposite">
+
+
+    <!-- CarrotsReplayComponent -->
+
+    <component name="CompanyServiceComponent">
+        <implementation.java class="com.ptteng.sca.carrots.replay.CompanySCAClient"/>
+
+        <reference name="companyService">
+            <scallop:binding.rmi registryName="company-carrots-replay-home-service-rmi"
+                                 serviceName="CompanyRMIService"/>
+        </reference>
+    </component>
+    <component name="ProfessionServiceComponent">
+        <implementation.java class="com.ptteng.sca.carrots.replay.ProfessionSCAClient"/>
+
+        <reference name="professionService">
+            <scallop:binding.rmi registryName="profession-carrots-replay-home-service-rmi"
+                                 serviceName="ProfessionRMIService"/>
+        </reference>
+    </component>
+    <component name="CompanyTagServiceComponent">
+        <implementation.java class="com.ptteng.sca.carrots.replay.CompanyTagSCAClient"/>
+
+        <reference name="companyTagService">
+            <scallop:binding.rmi registryName="companyTag-carrots-replay-home-service-rmi"
+                                 serviceName="CompanyTagRMIService"/>
+        </reference>
+    </component>
+    <component name="ArticleServiceComponent">
+        <implementation.java class="com.ptteng.sca.carrots.replay.ArticleSCAClient"/>
+
+        <reference name="articleService">
+            <scallop:binding.rmi registryName="article-carrots-replay-home-service-rmi"
+                                 serviceName="ArticleRMIService"/>
+        </reference>
+    </component>
+
+
+
+    <component name = "ManagerServiceComponent">
+        <implementation.java class = "com.ptteng.sca.carrots.replay.ManagerSCAClient"/>
+
+        <reference name = "managerService">
+            <scallop:binding.rmi registryName = "manager-carrots-replay-home-service-rmi" serviceName="ManagerRMIService"/>
+        </reference>
+    </component >
+    <component name = "ModuleServiceComponent">
+        <implementation.java class = "com.ptteng.sca.carrots.replay.ModuleSCAClient"/>
+
+        <reference name = "moduleService">
+            <scallop:binding.rmi registryName = "module-carrots-replay-home-service-rmi" serviceName="ModuleRMIService"/>
+        </reference>
+    </component >
+    <component name = "RoleServiceComponent">
+        <implementation.java class = "com.ptteng.sca.carrots.replay.RoleSCAClient"/>
+
+        <reference name = "roleService">
+            <scallop:binding.rmi registryName = "role-carrots-replay-home-service-rmi" serviceName="RoleRMIService"/>
+        </reference>
+    </component >
+    <component name = "RoleModuleServiceComponent">
+        <implementation.java class = "com.ptteng.sca.carrots.replay.RoleModuleSCAClient"/>
+
+        <reference name = "roleModuleService">
+            <scallop:binding.rmi registryName = "roleModule-carrots-replay-home-service-rmi" serviceName="RoleModuleRMIService"/>
+        </reference>
+    </component >
+
+</composite>
+

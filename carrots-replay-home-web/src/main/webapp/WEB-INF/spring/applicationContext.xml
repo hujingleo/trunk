@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
+
+    <context:component-scan base-package="com.ptteng.carrots.replay.home.service"/>
+
+
+
+    <bean id="cookieUtil" class="com.qding.common.util.http.cookie.CookieUtil">
+        <property name="home" value="www.zonzii.com"></property>
+        <property name="domain" value=".zonzii.com"></property>
+    </bean>
+
+
+
+    <!-- 文件上传 -->
+    <!--<bean id="multipartResolver"-->
+          <!--class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
+        <!--<property name="defaultEncoding" value="UTF-8"></property>-->
+        <!--<property name="maxUploadSize" value="52428800"></property>-->
+        <!--<property name="uploadTempDir" value="temp"></property>-->
+    <!--</bean>-->
+
+
+    <!-- 图片上传 -->
+    <!--<bean id="imgStorageUtil" class="com.ptteng.common.storage.util.ImgStorageUtilServerImpl" >-->
+        <!--<property name="bucketName" value="water.download"></property>-->
+    <!--</bean>-->
+
+
+
+    <bean id="managerServiceConfig" class="java.util.HashMap">
+        <constructor-arg>
+            <map>
+                <entry key="pwd" value="123456"></entry>
+            </map>
+        </constructor-arg>
+    </bean>
+
+</beans>

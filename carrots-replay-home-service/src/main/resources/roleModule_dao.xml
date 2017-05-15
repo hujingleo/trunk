@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dal>
+	<route>
+		<object name="com.ptteng.carrots.replay.home.model.RoleModule"
+			listenerClass="" strategyProperty="">
+			
+			
+			
+					<list name="getRoleModuleIdsByRid"
+				sqlitem="select id from role_module  where role_id=?"
+				keyProperty="rid" valueProperty="id" keyColumn="role_id" />
+
+			<list name="getRoleModuleIdsByMid"
+				  sqlitem="select id from role_module  where module_id=? "
+				  keyProperty="mid" valueProperty="id" keyColumn="module_id" />
+						
+			
+					<list name="getRoleModuleIdsAll" sqlitem="select id from role_module where 1 = 1 order by create_at desc"
+				keyProperty="version" valueProperty="id" keyColumn="version" />
+			
+			<dbStrategy name="mutiDS"
+                clasz="com.gemantic.dal.route.strategy.DefaultStrategy">  <pattern value="[0-9]$" group="carrots_replay" />
+            </dbStrategy>
+			
+		</object>
+	</route>
+</dal>

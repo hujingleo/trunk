@@ -1,0 +1,220 @@
+<div class="row pd-top-2">
+    <div class=" col-md-12 pd-top-2 pd-bottom-2  panel panel-default">
+        <form class="form-inline form-search" role="form">
+           
+           
+                        <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">职位id自增主键名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.id">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">公司名称名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.companyName">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">公司id名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.companyId">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">职位名称名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.name">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">职业类别名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.category">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">学历要求名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.education">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">工作经验名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.experience">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">薪资名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.compensation">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">岗位职责名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.responsibility">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">必要条件名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.requisite">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">公司福利名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.boon">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">上架状态名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.status">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">上架时间名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.releaseAt">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">推荐类型名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.recommend">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">职业标签id名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.tagId">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">创建人id名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.createBy">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">更新人id名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.updateBy">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">数据更新时间名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.updateAt">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">数据创建时间名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.createAt">
+            </div>
+                 
+                     
+         
+           
+            <div class="form-group col-md-6 col-md-offset-1">
+         
+                <button class="btn btn-primary pull-right"style="margin-right: 2%;"
+                        ng-click="vm.search()">查询
+                </button>
+                <button class="btn btn-primary pull-right"
+                        ng-if="vm.hasParent" ng-click="vm.research()"
+                        style="margin-right:2%;">重置
+                </button>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class=" col-md-12 ">
+            <div class="  panel panel-default">
+                <div class="panel-heading">
+                
+                
+                    管理
+                    <div class="btn-group pull-right" ng-if="vm.params.id">
+                        <div class="btn btn-primary btn-xs" ng-if="globalPermission.created" ui-sref="field.profession()">
+                            <i class="fa fa-plus-square fa-fw"></i>
+                            新增
+                        </div>
+                    </div>
+           
+                    
+                    
+                    
+                    
+                </div>
+
+                <div class="panel-body">
+                    <ul class="ul-table-head row">
+                        <li>
+                        
+                            <div class="three1 text-center">序号</div>
+                                                                                           <div class="three1 text-center">职位id自增主键</div>  
+                                                                                                                           <div class="three1 text-center">公司名称</div>  
+                                                                                                                           <div class="three1 text-center">公司id</div>  
+                                                                                                                           <div class="three1 text-center">职位名称</div>  
+                                                                                                                           <div class="three1 text-center">职业类别</div>  
+                                                                                                                           <div class="three1 text-center">学历要求</div>  
+                                                                                                                           <div class="three1 text-center">工作经验</div>  
+                                                                                                                           <div class="three1 text-center">薪资</div>  
+                                                                                                                           <div class="three1 text-center">岗位职责</div>  
+                                                                                                                           <div class="three1 text-center">必要条件</div>  
+                                                                                                                           <div class="three1 text-center">公司福利</div>  
+                                                                                                                           <div class="three1 text-center">上架状态</div>  
+                                                                                                                           <div class="three1 text-center">上架时间</div>  
+                                                                                                                           <div class="three1 text-center">推荐类型</div>  
+                                                                                                                           <div class="three1 text-center">职业标签id</div>  
+                                                                                                                           <div class="three1 text-center">创建人id</div>  
+                                                                                                                           <div class="three1 text-center">更新人id</div>  
+                                                                                                                           <div class="three1 text-center">数据更新时间</div>  
+                                                                                                                           <div class="three1 text-center">数据创建时间</div>  
+                                                                                         <div class="three3 text-center">操作</div>
+                          
+                            
+                        </li>
+                    </ul>
+                    <ul class="ul-table" dnd-list="vm.list">
+                        <li ng-repeat="item in vm.list"
+                            dnd-draggable="item"
+                            dnd-moved="vm.list.splice(19, 1)"
+                            dnd-effect-allowed="move"
+                            dnd-selected="vm.list.selected = item"
+                            ng-class="{'selected': vm.list.selected === item}"
+                        >
+                            <div class="three1">{{19*1+1}}</div>
+                                                                                           <div class="three2">{{item.id}}</div>  
+                                                                                                                            <div class="three2">{{item.companyName}}</div>  
+                                                                                                                            <div class="three2">{{item.companyId}}</div>  
+                                                                                                                            <div class="three2">{{item.name}}</div>  
+                                                                                                                            <div class="three2">{{item.category}}</div>  
+                                                                                                                            <div class="three2">{{item.education}}</div>  
+                                                                                                                            <div class="three2">{{item.experience}}</div>  
+                                                                                                                            <div class="three2">{{item.compensation}}</div>  
+                                                                                                                            <div class="three2">{{item.responsibility}}</div>  
+                                                                                                                            <div class="three2">{{item.requisite}}</div>  
+                                                                                                                            <div class="three2">{{item.boon}}</div>  
+                                                                                                                            <div class="three2">{{item.status}}</div>  
+                                                                                                                            <div class="three2">{{item.releaseAt}}</div>  
+                                                                                                                            <div class="three2">{{item.recommend}}</div>  
+                                                                                                                            <div class="three2">{{item.tagId}}</div>  
+                                                                                                                            <div class="three2">{{item.createBy}}</div>  
+                                                                                                                            <div class="three2">{{item.updateBy}}</div>  
+                                                                                                                            <div class="three2">{{item.updateAt}}</div>  
+                                                                                                                            <div class="three2">{{item.createAt}}</div>  
+                                                                                         
+                           
+                            
+                            
+                            
+                            <div class="three3">
+                              
+                                <button class="btn btn-default btn-xs"
+                                        ui-sref="field.profession({id:item.id})">查看
+                                </button>
+                                <button class="btn btn-default btn-xs"  ng-if="globalPermission.updated"
+                                        ui-sref="field.profession({id:item.id})">编辑
+                                </button>
+                                <button class="btn btn-danger btn-xs" ng-if="globalPermission.deleted" data-toggle="modal" data-target="#myModal"
+                                        ng-click="vm.del(item.id, 19)">删除
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<paging ng-if="vm.page" next="{{vm.page}}"></paging>
+

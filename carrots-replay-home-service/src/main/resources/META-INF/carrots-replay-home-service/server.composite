@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite xmlns="http://www.osoa.org/xmlns/sca/1.0" xmlns:tuscany="http://tuscany.apache.org/xmlns/sca/1.0"
+           xmlns:scallop="http://scallop/xmlns/sca/1.0"
+           targetNamespace="http://CarrotsReplayComponent" xmlns:sample="http://CarrotsReplayComponent"
+           name="CarrotsReplayComponent">
+
+
+    <component name="CarrotsReplayComponent">
+        <implementation.spring location="META-INF/carrots-replay-home-service/applicationContext-server.xml"/>
+    </component>
+
+    <service name="companyService" promote="CarrotsReplayComponent/companyService">
+        <interface.java interface="com.ptteng.carrots.replay.home.service.CompanyService"/>
+        <scallop:binding.rmi host="localhost" port="10740" serviceName="CompanyRMIService"/>
+    </service>
+    <service name="professionService" promote="CarrotsReplayComponent/professionService">
+        <interface.java interface="com.ptteng.carrots.replay.home.service.ProfessionService"/>
+        <scallop:binding.rmi host="localhost" port="10740" serviceName="ProfessionRMIService"/>
+    </service>
+    <service name="companyTagService" promote="CarrotsReplayComponent/companyTagService">
+        <interface.java interface="com.ptteng.carrots.replay.home.service.CompanyTagService"/>
+        <scallop:binding.rmi host="localhost" port="10740" serviceName="CompanyTagRMIService"/>
+    </service>
+    <service name="articleService" promote="CarrotsReplayComponent/articleService">
+        <interface.java interface="com.ptteng.carrots.replay.home.service.ArticleService"/>
+        <scallop:binding.rmi host="localhost" port="10740" serviceName="ArticleRMIService"/>
+    </service>
+    <service name="managerService" promote="CarrotsReplayComponent/managerService">
+        <interface.java interface="com.ptteng.carrots.replay.home.service.ManagerService"/>
+        <scallop:binding.rmi host="localhost" port="10740" serviceName="ManagerRMIService"/>
+    </service>
+
+    <service name="moduleService" promote="CarrotsReplayComponent/moduleService">
+        <interface.java interface="com.ptteng.carrots.replay.home.service.ModuleService"/>
+        <scallop:binding.rmi host="localhost" port="10740" serviceName="ModuleRMIService"/>
+    </service>
+
+    <service name="roleService" promote="CarrotsReplayComponent/roleService">
+        <interface.java interface="com.ptteng.carrots.replay.home.service.RoleService"/>
+        <scallop:binding.rmi host="localhost" port="10740" serviceName="RoleRMIService"/>
+    </service>
+    <service name="roleModuleService" promote="CarrotsReplayComponent/roleModuleService">
+        <interface.java interface="com.ptteng.carrots.replay.home.service.RoleModuleService"/>
+        <scallop:binding.rmi host="localhost" port="10740" serviceName="RoleModuleRMIService"/>
+    </service>
+
+    <service name="recordsService" promote="CarrotsReplayComponent/recordsService">
+        <interface.java interface="com.ptteng.carrots.replay.home.service.RecordsService"/>
+        <scallop:binding.rmi host="localhost" port="10740" serviceName="RecordsRMIService"/>
+    </service>
+</composite>
+

@@ -1,0 +1,171 @@
+<div class="row pd-top-2">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            DetailCtrl管理
+        </div>
+        <div class="panel-body" style="border:1px solid #858585; margin: 2%;">
+            <form role="form" class="form-horizontal" name="ngForm" novalidate>
+          
+          
+                    <div class="form-group">
+                    <label class="col-md-2 control-label">文章id名称</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-disabled="vm.noedit" name="name" placeholder="请输入"
+                               ng-model="vm.params.id" required>
+                    </div>
+                                               <div class="error" ng-messages="ngForm.name.$error" ng-if="ngForm.name.$touched">
+                           <div ng-message="required">文章id不能为空</div>
+                         </div>    
+                                       
+                </div>
+          
+                 
+                    <div class="form-group">
+                    <label class="col-md-2 control-label">类型名称</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-disabled="vm.noedit" name="name" placeholder="请输入"
+                               ng-model="vm.params.type" required>
+                    </div>
+                                               <div class="error" ng-messages="ngForm.name.$error" ng-if="ngForm.name.$touched">
+                           <div ng-message="required">类型不能为空</div>
+                         </div>    
+                                       
+                </div>
+          
+                 
+                    <div class="form-group">
+                    <label class="col-md-2 control-label">标题名称</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-disabled="vm.noedit" name="name" placeholder="请输入"
+                               ng-model="vm.params.title" required>
+                    </div>
+                                               <div class="error" ng-messages="ngForm.name.$error" ng-if="ngForm.name.$touched">
+                           <div ng-message="required">标题不能为空</div>
+                         </div>    
+                                       
+                </div>
+          
+                 
+                    <div class="form-group">
+                    <label class="col-md-2 control-label">图片名称</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-disabled="vm.noedit" name="name" placeholder="请输入"
+                               ng-model="vm.params.img" required>
+                    </div>
+                                               <div class="error" ng-messages="ngForm.name.$error" ng-if="ngForm.name.$touched">
+                           <div ng-message="required">图片不能为空</div>
+                         </div>    
+                                       
+                </div>
+          
+                 
+                    <div class="form-group">
+                    <label class="col-md-2 control-label">链接名称</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-disabled="vm.noedit" name="name" placeholder="请输入"
+                               ng-model="vm.params.url" required>
+                    </div>
+                                               <div class="error" ng-messages="ngForm.name.$error" ng-if="ngForm.name.$touched">
+                           <div ng-message="required">链接不能为空</div>
+                         </div>    
+                                       
+                </div>
+          
+                 
+                    <div class="form-group">
+                    <label class="col-md-2 control-label">行业名称</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-disabled="vm.noedit" name="name" placeholder="请输入"
+                               ng-model="vm.params.industry" required>
+                    </div>
+                                               <div class="error" ng-messages="ngForm.name.$error" ng-if="ngForm.name.$touched">
+                           <div ng-message="required">行业不能为空</div>
+                         </div>    
+                                       
+                </div>
+          
+                 
+                    <div class="form-group">
+                    <label class="col-md-2 control-label">状态名称</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-disabled="vm.noedit" name="name" placeholder="请输入"
+                               ng-model="vm.params.status" required>
+                    </div>
+                                               <div class="error" ng-messages="ngForm.name.$error" ng-if="ngForm.name.$touched">
+                           <div ng-message="required">状态不能为空</div>
+                         </div>    
+                                       
+                </div>
+          
+                 
+                    <div class="form-group">
+                    <label class="col-md-2 control-label">创建人id名称</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-disabled="vm.noedit" name="name" placeholder="请输入"
+                               ng-model="vm.params.createBy" required>
+                    </div>
+                                               <div class="error" ng-messages="ngForm.name.$error" ng-if="ngForm.name.$touched">
+                           <div ng-message="required">创建人id不能为空</div>
+                         </div>    
+                                       
+                </div>
+          
+                 
+                    <div class="form-group">
+                    <label class="col-md-2 control-label">更新人id名称</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-disabled="vm.noedit" name="name" placeholder="请输入"
+                               ng-model="vm.params.updateBy" required>
+                    </div>
+                                               <div class="error" ng-messages="ngForm.name.$error" ng-if="ngForm.name.$touched">
+                           <div ng-message="required">更新人id不能为空</div>
+                         </div>    
+                                       
+                </div>
+          
+                 
+                    <div class="form-group">
+                    <label class="col-md-2 control-label">数据更新时间名称</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-disabled="vm.noedit" name="name" placeholder="请输入"
+                               ng-model="vm.params.updateAt" required>
+                    </div>
+                                               <div class="error" ng-messages="ngForm.name.$error" ng-if="ngForm.name.$touched">
+                           <div ng-message="required">数据更新时间不能为空</div>
+                         </div>    
+                                       
+                </div>
+          
+                 
+                    <div class="form-group">
+                    <label class="col-md-2 control-label">数据创建时间名称</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-disabled="vm.noedit" name="name" placeholder="请输入"
+                               ng-model="vm.params.createAt" required>
+                    </div>
+                                               <div class="error" ng-messages="ngForm.name.$error" ng-if="ngForm.name.$touched">
+                           <div ng-message="required">数据创建时间不能为空</div>
+                         </div>    
+                                       
+                </div>
+          
+                 
+                          
+                <div class="form-group">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success btn-sm" ng-if="vm.status==2" ng-click="vm.update()" ng-disabled="ngForm.$invalid">保存</button>
+                        <button class="btn btn-success btn-sm" ng-if="vm.status==1&&globalPermission.updated" ng-click="vm.edit()">编辑</button>
+                        <button class="btn btn-success btn-sm" ng-if="vm.status==3" ng-click="vm.add()" ng-disabled="ngForm.$invalid">新增</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-default btn-sm" ng-if="vm.status==2||vm.status==3"
+                                ng-click="vm.cancel()">取消
+                        </button>
+                        <button class="btn btn-default btn-sm" ng-if="vm.status==1" ng-click="vm.cancel()">返回</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

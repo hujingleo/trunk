@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:sca="http://www.springframework.org/schema/sca"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+            http://www.springframework.org/schema/sca http://www.springframework.org/schema/sca/spring-sca.xsd">
+
+
+	<!--第一步:开启扫描,包含注册BeanPostProcessor-->
+	<!--使用了context:component-scan即包含context:annotation-config的功能,所以可以将其省去-->
+<!--	<context:annotation-config />-->
+    <context:component-scan base-package="com.gemantic"/>  
+	
+	
+	<bean id="scaClient"
+		class="com.gemantic.common.sca.service.SCAClientBean">
+		<property name="resource" value="client.composite" />
+	</bean>
+	
+	
+	<!-- ============================================================ -->
+	<!-- ==                    CarrotsReplayComponent                       == -->
+	<!-- ============================================================ -->
+	
+	 
+	
+	
+	<!-- CompanyService  -->
+
+	
+	<bean id="companyService"
+		class="com.gemantic.common.sca.service.SCAClientServiceFactory">
+		<property name="client" ref="scaClient" />
+		<property name="component" value="CompanyServiceComponent" />
+		<property name="className"
+			value="com.ptteng.carrots.replay.home.service.CompanyService" />
+	</bean>
+
+	
+	
+	
+	
+	<!-- ProfessionService  -->
+
+	
+	<bean id="professionService"
+		class="com.gemantic.common.sca.service.SCAClientServiceFactory">
+		<property name="client" ref="scaClient" />
+		<property name="component" value="ProfessionServiceComponent" />
+		<property name="className"
+			value="com.ptteng.carrots.replay.home.service.ProfessionService" />
+	</bean>
+
+	
+	
+	
+	
+	<!-- CompanyTagService  -->
+
+
+	<bean id="companyTagService"
+		  class="com.gemantic.common.sca.service.SCAClientServiceFactory">
+		<property name="client" ref="scaClient" />
+		<property name="component" value="CompanyTagServiceComponent" />
+		<property name="className"
+				  value="com.ptteng.carrots.replay.home.service.CompanyTagService" />
+	</bean>
+	<bean id="articleService"
+					 class="com.gemantic.common.sca.service.SCAClientServiceFactory">
+	<property name="client" ref="scaClient" />
+	<property name="component" value="ArticleServiceComponent" />
+	<property name="className"
+			  value="com.ptteng.carrots.replay.home.service.ArticleService" />
+</bean>
+
+	<!-- ManagerService  -->
+
+
+	<bean id="managerService"
+		  class="com.gemantic.common.sca.service.SCAClientServiceFactory">
+		<property name="client" ref="scaClient" />
+		<property name="component" value="ManagerServiceComponent" />
+		<property name="className"
+				  value="com.ptteng.carrots.replay.home.service.ManagerService" />
+	</bean>
+
+
+
+
+
+	<!-- ModuleService  -->
+
+
+	<bean id="moduleService"
+		  class="com.gemantic.common.sca.service.SCAClientServiceFactory">
+		<property name="client" ref="scaClient" />
+		<property name="component" value="ModuleServiceComponent" />
+		<property name="className"
+				  value="com.ptteng.carrots.replay.home.service.ModuleService" />
+	</bean>
+
+
+
+
+
+	<!-- RoleService  -->
+
+
+	<bean id="roleService"
+		  class="com.gemantic.common.sca.service.SCAClientServiceFactory">
+		<property name="client" ref="scaClient" />
+		<property name="component" value="RoleServiceComponent" />
+		<property name="className"
+				  value="com.ptteng.carrots.replay.home.service.RoleService" />
+	</bean>
+
+
+
+	<!-- RoleModuleService  -->
+
+
+	<bean id="roleModuleService"
+		  class="com.gemantic.common.sca.service.SCAClientServiceFactory">
+		<property name="client" ref="scaClient" />
+		<property name="component" value="RoleModuleServiceComponent" />
+		<property name="className"
+				  value="com.ptteng.carrots.replay.home.service.RoleModuleService" />
+	</bean>
+
+
+
+
+	<bean id="cookieUtil" class="com.qding.common.util.http.cookie.CookieUtil">
+		<property name="home" value="www.zonzii.com"></property>
+		<property name="domain" value=".zonzii.com"></property>
+	</bean>
+	
+	
+	
+	<!-- performance -->
+	
+	 <aop:aspectj-autoproxy />
+        <bean id="aroundLoggingTime" class="com.gemantic.common.stat.aop.time.AroundTimeConsume"/>
+        <aop:config>
+            <aop:aspect ref="aroundLoggingTime">
+                <aop:pointcut id="publicServiceMethod" expression="execution(* com.gemantic..service.*.*(..)) &amp;&amp; (!execution(* com.gemantic.common.sca.service.*.*(..)))" />
+                <aop:around method="around" pointcut-ref="publicServiceMethod"/>
+            </aop:aspect>
+        </aop:config>
+</beans>
+

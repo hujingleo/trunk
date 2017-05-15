@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dal>
+    <list>
+
+
+        <config>
+            <path>company_dao.xml</path>
+        </config>
+
+
+        <config>
+            <path>profession_dao.xml</path>
+        </config>
+
+
+        <config>
+            <path>companyTag_dao.xml</path>
+        </config>
+
+        <config>
+            <path>article_dao.xml</path>
+        </config>
+
+        <config>
+            <path>manager_dao.xml</path>
+        </config>
+
+
+        <config>
+            <path>module_dao.xml</path>
+        </config>
+
+
+        <config>
+            <path>role_dao.xml</path>
+        </config>
+
+        <config>
+            <path>roleModule_dao.xml</path>
+        </config>
+    </list>
+
+    <default>
+        <dbStrategy name=""
+                    clasz="com.gemantic.dal.route.strategy.DefaultStrategy">
+            <pattern value="[0-9]$" group="g1"/>
+        </dbStrategy>
+        <listenerClass className=""/>
+        <idCenterDS ds="idCenterDS"/>
+    </default>
+</dal>                

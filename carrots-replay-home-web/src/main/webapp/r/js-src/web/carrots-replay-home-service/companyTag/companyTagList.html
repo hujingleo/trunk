@@ -1,0 +1,136 @@
+<div class="row pd-top-2">
+    <div class=" col-md-12 pd-top-2 pd-bottom-2  panel panel-default">
+        <form class="form-inline form-search" role="form">
+           
+           
+                        <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">公司标签id自增主键名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.id">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">公司id名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.companyId">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">公司标签名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.tag">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">创建人id名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.createBy">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">更新人id名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.updateBy">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">数据更新时间名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.updateAt">
+            </div>
+                 
+                      <div class="form-group col-md-4 col-md-offset-1">
+                <label class="control-label">数据创建时间名称：</label>
+                <input type="text" class="form-control" ng-model="vm.params.createAt">
+            </div>
+                 
+                     
+         
+           
+            <div class="form-group col-md-6 col-md-offset-1">
+         
+                <button class="btn btn-primary pull-right"style="margin-right: 2%;"
+                        ng-click="vm.search()">查询
+                </button>
+                <button class="btn btn-primary pull-right"
+                        ng-if="vm.hasParent" ng-click="vm.research()"
+                        style="margin-right:2%;">重置
+                </button>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class=" col-md-12 ">
+            <div class="  panel panel-default">
+                <div class="panel-heading">
+                
+                
+                    管理
+                    <div class="btn-group pull-right" ng-if="vm.params.id">
+                        <div class="btn btn-primary btn-xs" ng-if="globalPermission.created" ui-sref="field.companyTag()">
+                            <i class="fa fa-plus-square fa-fw"></i>
+                            新增
+                        </div>
+                    </div>
+           
+                    
+                    
+                    
+                    
+                </div>
+
+                <div class="panel-body">
+                    <ul class="ul-table-head row">
+                        <li>
+                        
+                            <div class="three1 text-center">序号</div>
+                                                                                           <div class="three1 text-center">公司标签id自增主键</div>  
+                                                                                                                           <div class="three1 text-center">公司id</div>  
+                                                                                                                           <div class="three1 text-center">公司标签</div>  
+                                                                                                                           <div class="three1 text-center">创建人id</div>  
+                                                                                                                           <div class="three1 text-center">更新人id</div>  
+                                                                                                                           <div class="three1 text-center">数据更新时间</div>  
+                                                                                                                           <div class="three1 text-center">数据创建时间</div>  
+                                                                                         <div class="three3 text-center">操作</div>
+                          
+                            
+                        </li>
+                    </ul>
+                    <ul class="ul-table" dnd-list="vm.list">
+                        <li ng-repeat="item in vm.list"
+                            dnd-draggable="item"
+                            dnd-moved="vm.list.splice(7, 1)"
+                            dnd-effect-allowed="move"
+                            dnd-selected="vm.list.selected = item"
+                            ng-class="{'selected': vm.list.selected === item}"
+                        >
+                            <div class="three1">{{7*1+1}}</div>
+                                                                                           <div class="three2">{{item.id}}</div>  
+                                                                                                                            <div class="three2">{{item.companyId}}</div>  
+                                                                                                                            <div class="three2">{{item.tag}}</div>  
+                                                                                                                            <div class="three2">{{item.createBy}}</div>  
+                                                                                                                            <div class="three2">{{item.updateBy}}</div>  
+                                                                                                                            <div class="three2">{{item.updateAt}}</div>  
+                                                                                                                            <div class="three2">{{item.createAt}}</div>  
+                                                                                         
+                           
+                            
+                            
+                            
+                            <div class="three3">
+                              
+                                <button class="btn btn-default btn-xs"
+                                        ui-sref="field.companyTag({id:item.id})">查看
+                                </button>
+                                <button class="btn btn-default btn-xs"  ng-if="globalPermission.updated"
+                                        ui-sref="field.companyTag({id:item.id})">编辑
+                                </button>
+                                <button class="btn btn-danger btn-xs" ng-if="globalPermission.deleted" data-toggle="modal" data-target="#myModal"
+                                        ng-click="vm.del(item.id, 7)">删除
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<paging ng-if="vm.page" next="{{vm.page}}"></paging>
+

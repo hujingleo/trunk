@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<datasources>
+		<ds name="carrots_replay"
+			driverClassName="com.mysql.jdbc.Driver"
+			url="jdbc:mysql://120.92.4.210:3306/carrots_replay?defaultBatchValue=1000"
+			username="arthur"
+			password="arthur"
+			maxActive="50"
+			maxIdle="50"
+			maxWait="10"
+            check="true"
+		/>
+		 <ds name="idCenterDS"
+			driverClassName="com.mysql.jdbc.Driver"
+			url="jdbc:mysql://120.92.4.210:3306/resources?defaultBatchValue=1000"
+			username="arthur"
+			password="arthur"
+			maxActive="50"
+			maxIdle="50"
+			maxWait="10"
+            check="true"
+		/>  
+	</datasources>
+	<groups>
+		<group name="carrots_replay" master="carrots_replay"  />			
+	</groups>
+</root>
+
+
